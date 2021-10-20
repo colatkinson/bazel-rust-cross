@@ -1,0 +1,3 @@
+build --extra_toolchains=//:i386_toolchain
+build --extra_toolchains=//:rust_i386_bare_metal
+build:i386 --platforms=//platform:i386_bare_metal
