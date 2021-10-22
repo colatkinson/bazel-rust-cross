@@ -2,6 +2,7 @@ load("@rules_rust//rust:rust.bzl", "rust_binary")
 load("@rules_rust//rust:toolchain.bzl", "rust_stdlib_filegroup")
 load("//platform:i386_stub_cc_toolchain.bzl", "i386_stub_cc_toolchain")
 load("//platform:i386_rust_toolchain.bzl", "i386_rust_toolchain")
+load("//platform:cross.bzl", "i386_bare_metal_rust_binary")
 
 i386_stub_cc_toolchain(name = "i386_toolchain")
 
@@ -24,4 +25,9 @@ rust_binary(
         "-Clink-arg=-nostartfiles",
         "-Ctarget-feature=+crt-static",
     ],
+)
+
+i386_bare_metal_rust_binary(
+    name = "main_i386",
+    src_binary = ":main",
 )
