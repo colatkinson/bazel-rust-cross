@@ -27,3 +27,13 @@ rust_repositories(
     },
 )
 
+http_archive(
+    name = "compiler_builtins",
+    urls = [
+        "https://static.crates.io/crates/compiler_builtins/compiler_builtins-0.1.49.crate",
+    ],
+    strip_prefix = "compiler_builtins-0.1.49",
+    sha256 = "20b1438ef42c655665a8ab2c1c6d605a305f031d38d9be689ddfef41a20f3aa2",
+    type = "tgz",
+    build_file = "//third_party:compiler_builtins.BUILD",
+)
